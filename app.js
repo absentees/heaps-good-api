@@ -98,13 +98,17 @@ router.route('/peesee')
 
         if (status == "true") {
           res.json({
-            text: "Toilet is occupied. Hold tight.",
-            color: "danger"
+						"attachments": [{
+							text: "Toilet is occupied. Hold tight.",
+	            color: "danger"
+						}]
           });
         } else if(status == "false") {
           res.json({
-            text: "Toilet is free. You're good to go.",
-            color: "good"
+						"attachments": [{
+							text: "Toilet is free. You're good to go.",
+	            color: "good"
+						}]
           });
         }
     });
