@@ -1,0 +1,17 @@
+{
+  "name": "heaps-good-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "shutterstock": "^0.12.0"
+  }
+}
