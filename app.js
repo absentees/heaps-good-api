@@ -93,28 +93,33 @@ router.route('/peesee')
     }
 
     var rootRef = new firebase(FIREBASE_URL);
-    rootRef.on("value", function(data){
-        var status = data.val()["occupied"];
+		var status = "";
 
-        if (status == "true") {
-          res.json({
-						"text": "It looks like the toilet is:",
-						"attachments": [{
-							"fallback": "Occupied. Hold tight.",
-							"text": "Occupied. Hold tight.",
-	            "color": "danger"
-						}]
-          });
-        } else if(status == "false") {
-          res.json({
-						"text": "It looks like the toilet is:",
-						"attachments": [{
-							"fallback": "Vacant. You're good to go.",
-							"text": "Vacant. You're good to go.",
-	            "color": "good"
-						}]
-          });
-        }
+    rootRef.on("value", function(data){
+			status = data.val()["occupied"];
     });
 
+		if (status == "true") {
+			res.json({
+				"text": "It looks like the toilet is:",
+				"attachments": [{
+					"fallback": "Occupied. Hold tight.",
+					"text": "Occupied. Hold tight.",
+					"color": "danger"
+				}]
+			});
+		} else if(status == "false") {
+			res.json({
+				"text": "It looks like the toilet is:",
+				"attachments": [{
+					"fallback": "Vacant. You're good to go.",
+					"text": "Vacant. You're good to go.",
+					"color": "good"
+				}]
+			});
+		} else{
+			res.json({
+				"text": "Sorry something went wrong, maybe just walk over and check yourself?"
+			});
+		}
   });
