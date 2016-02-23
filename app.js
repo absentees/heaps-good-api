@@ -20,7 +20,7 @@ router.get('/', function(req, res){
 });
 
 router.use(function(req, res, next){
-	if (req.body.token == process.env.slack_token) {
+	if (req.body.token == process.env.slack_token || req.body.token == process.env.slack_token_2) {
 		// Request has come from slack, all good
 		console.log("TOKEN MATCHES");
 		next();
@@ -84,7 +84,7 @@ router.route('/business-time')
 //        TOILET          //
 //                        //
 //************************//
-router.route('/need2wee')
+router.route('/peesee')
   .post(function(req,res){
     var FIREBASE_URL = process.env.firebase_url;
 
