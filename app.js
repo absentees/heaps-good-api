@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 
 var shutterstock = require('shutterstock');
+var firebase = require('firebase');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -76,5 +77,34 @@ router.route('/business-time')
 				});
 			}
 		});
-
 	});
+
+//************************//
+//                        //
+//        TOILET          //
+//                        //
+//************************//
+router.route('/need2wee')
+  .post(function(req,res){
+    var FIREBASE_URL = process.env.firebase_url;
+
+    if (!FIREBASE_URL) {
+      console.log("Could not retrieve firebase url from config");
+    }
+
+    var rootRef = new firebase(FIREBASE_URL);
+    var status = rootRef.child('occupied');
+    var responseText = "";
+
+    if (status == "true") {
+      res.json({
+        text: "Toilet is occupied. Hold tight.",
+        color: "danger"
+      });
+    } else {
+      res.json({
+        text: "Toilet is free. You're good to go.",
+        color: "good"
+      });
+    }
+  });
