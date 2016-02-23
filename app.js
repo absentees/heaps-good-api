@@ -98,19 +98,21 @@ router.route('/peesee')
 
         if (status == "true") {
           res.json({
+						"response_type": "in_channel",
 						"text": "It looks like the toilet is:",
 						"attachments": [{
 							"fallback": "Occupied. Hold tight.",
-							"text": "Toilet is occupied. Hold tight.",
+							"text": "Occupied. Hold tight.",
 	            "color": "danger"
 						}]
           });
         } else if(status == "false") {
           res.json({
+						"response_type": "in_channel",
 						"text": "It looks like the toilet is:",
 						"attachments": [{
 							"fallback": "Vacant. You're good to go.",
-							"text": "Toilet is free. You're good to go.",
+							"text": "Vacant. You're good to go.",
 	            "color": "good"
 						}]
           });
