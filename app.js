@@ -95,6 +95,8 @@ router.route('/peesee')
     var rootRef = new firebase(FIREBASE_URL);
     var status = rootRef.child('occupied');
 
+    console.log(status);
+
     if (status == "true") {
       res.json({
         text: "Toilet is occupied. Hold tight.",
