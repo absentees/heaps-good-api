@@ -94,14 +94,13 @@ router.route('/peesee')
 
     var rootRef = new firebase(FIREBASE_URL);
     var status = rootRef.child('occupied');
-    var responseText = "";
 
     if (status == "true") {
       res.json({
         text: "Toilet is occupied. Hold tight.",
         color: "danger"
       });
-    } else {
+    } else if(status == "false") {
       res.json({
         text: "Toilet is free. You're good to go.",
         color: "good"
