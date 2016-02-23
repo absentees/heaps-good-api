@@ -93,7 +93,7 @@ router.route('/peesee')
     }
 
     var rootRef = new firebase(FIREBASE_URL);
-    var status = rootRef.once('occupied', function(data){
+    var status = rootRef.once('value', function(data){
       console.log(data);
     });
 
