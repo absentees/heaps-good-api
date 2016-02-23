@@ -98,16 +98,18 @@ router.route('/peesee')
 
         if (status == "true") {
           res.json({
+						"text": "It looks like the toilet is:",
 						"attachments": [{
-							"fallback": "Toilet is occupied. Hold tight.",
+							"fallback": "Occupied. Hold tight.",
 							"text": "Toilet is occupied. Hold tight.",
 	            "color": "danger"
 						}]
           });
         } else if(status == "false") {
           res.json({
+						"text": "It looks like the toilet is:",
 						"attachments": [{
-							"fallback": "Toilet is free. You're good to go.",
+							"fallback": "Vacant. You're good to go.",
 							"text": "Toilet is free. You're good to go.",
 	            "color": "good"
 						}]
