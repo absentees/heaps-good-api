@@ -98,7 +98,6 @@ router.route('/peesee')
 
         if (status == "true") {
           res.json({
-						"response_type": "in_channel",
 						"text": "It looks like the toilet is:",
 						"attachments": [{
 							"fallback": "Occupied. Hold tight.",
@@ -108,7 +107,6 @@ router.route('/peesee')
           });
         } else if(status == "false") {
           res.json({
-						"response_type": "in_channel",
 						"text": "It looks like the toilet is:",
 						"attachments": [{
 							"fallback": "Vacant. You're good to go.",
