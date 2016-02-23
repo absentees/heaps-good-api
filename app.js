@@ -58,7 +58,6 @@ router.route('/business-time')
 			page: 1,
 			per_page: 1,
 			width_from: 500,
-			people_gender: "both",
 			people_model_released: true
 		});
 
