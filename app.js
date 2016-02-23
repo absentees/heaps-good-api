@@ -54,7 +54,7 @@ router.route('/business-time')
 		});
 
 		var query = ({
-			query: "business man" + req.body.text,
+			query: "business man " + req.body.text,
 			page: 1,
 			per_page: 1,
 			width_from: 500,
