@@ -93,19 +93,20 @@ router.route('/peesee')
     }
 
     var rootRef = new firebase(FIREBASE_URL);
-    var status = rootRef.once('value', function(data){
-      console.log(data);
+    rootRef.on("value", function(data){
+        var status = data.val()["occupied"];
+
+        if (status == "true") {
+          res.json({
+            text: "Toilet is occupied. Hold tight.",
+            color: "danger"
+          });
+        } else if(status == "false") {
+          res.json({
+            text: "Toilet is free. You're good to go.",
+            color: "good"
+          });
+        }
     });
 
-    if (status == "true") {
-      res.json({
-        text: "Toilet is occupied. Hold tight.",
-        color: "danger"
-      });
-    } else if(status == "false") {
-      res.json({
-        text: "Toilet is free. You're good to go.",
-        color: "good"
-      });
-    }
   });
