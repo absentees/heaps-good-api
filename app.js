@@ -6,7 +6,6 @@ var router = express.Router();
 var shutterstock = require('shutterstock');
 var firebase = require('firebase');
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -122,3 +121,7 @@ router.route('/peesee')
 			});
 		}
   });
+
+router.route('/clark').get(function(res,req) {
+	require('./clark/').init(res,req);
+});
