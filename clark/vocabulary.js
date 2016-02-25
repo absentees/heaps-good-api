@@ -7,7 +7,8 @@ module.exports = {
 		"web development",
 		"app development",
 		"brainstorming",
-		"design thinking"
+		"design thinking",
+		"marketing"
 	],
 
 	buzzVerbs: [
@@ -73,6 +74,8 @@ module.exports = {
 		"establishing",
 		"activating",
 		"actualising",
-		"realising"
+		"realising",
+		"marketing",
+		"advertising"
 	]
 };

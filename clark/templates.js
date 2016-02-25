@@ -11,5 +11,8 @@ module.exports = [
 	"Why {{ buzz_verb_present }} should be a part of your {{ noun }} portfolio",
 	"InVision + Dribbble team up to make {{ buzz_noun }} feedback more {{ adjective }}",
 	"{{ number }} predictions that will change {{ buzz_noun }} as we know it",
-	"What is a {{ adjective }} designer, and should you be one?"
+	"What is a {{ adjective }} designer, and should you be one?",
+	"An open letter to {{ nouns }} in {{ buzz_noun }}",
+	"{{ number }} qaulities of design-thinking {{ nouns }}",
+	"How can we teach {{ a_noun }} the {{ buzz_noun }} process?"
 ];
