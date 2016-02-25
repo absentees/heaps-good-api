@@ -59,7 +59,13 @@ function getTemplate() {
 module.exports = {
 	init: function(req,res) {
 		async.parallel([getStockImage, getCaption], function(err,results) {
-			res.json(results);
+			res.json({
+				"response_type": "in_channel",
+				"attachments":[{
+					"text": results[1] || "Whoops. Something went wrong" ,
+					"image_url": results[0] || ""
+				}]
+			});
 		});
 	}
 };
