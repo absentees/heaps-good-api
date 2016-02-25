@@ -4,7 +4,7 @@ module.exports = [
 	"How do you decide what to {{ buzz_verb }}?",
 	"Critiqueing {{ noun }} design",
 	"Navigating an enterprise {{ noun }} project",
-	"Free webinar: {{ buzz_verb_present }} {{ adjective }} prototypes without {{ a_nouns }}",
+	"Free webinar: {{ buzz_verb_present }} {{ adjective }} prototypes without {{ nouns }}",
 	"Lessons from {{ number }} days {{ buzz_verb_present }} {{ nouns }}",
 	"{{ number }} ways to {{ buzz_verb }} {{ nouns }}",
 	"UX {{ buzz_verb_present }} tips for your app, part {{ number }}",
