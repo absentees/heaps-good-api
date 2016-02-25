@@ -13,6 +13,6 @@ module.exports = [
 	"{{ number }} predictions that will change {{ buzz_noun }} as we know it",
 	"What is a {{ adjective }} designer, and should you be one?",
 	"An open letter to {{ nouns }} in {{ buzz_noun }}",
-	"{{ number }} qaulities of design-thinking {{ nouns }}",
+	"{{ number }} qualities of design-thinking {{ nouns }}",
 	"How can we teach {{ a_noun }} the {{ buzz_noun }} process?"
 ];
