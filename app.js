@@ -19,7 +19,7 @@ router.get('/', function(req, res){
 });
 
 router.use(function(req, res, next){
-	if (req.body.token == process.env.slack_token || req.body.token == process.env.slack_token_2) {
+	if (req.body.token == process.env.slack_token || req.body.token == process.env.slack_token_2 || req.body.token == process.env.slack_token_3 ) {
 		// Request has come from slack, all good
 		console.log("TOKEN MATCHES");
 		next();
@@ -122,6 +122,6 @@ router.route('/peesee')
 		}
   });
 
-router.route('/clark').get(function(res,req) {
+router.route('/clark').post(function(res,req) {
 	require('./clark/').init(res,req);
 });
