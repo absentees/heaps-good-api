@@ -9,6 +9,9 @@ sentencer.configure({
 		buzz_verb: function() {
    			return vocabulary.buzzVerbs[Math.floor(Math.random()*vocabulary.buzzVerbs.length)];
     	},
+    	buzz_noun: function() {
+   			return vocabulary.buzzNouns[Math.floor(Math.random()*vocabulary.buzzNouns.length)];
+    	},
     	buzz_verb_present: function() {
       		return vocabulary.buzzVerbsPresent[Math.floor(Math.random()*vocabulary.buzzVerbsPresent.length)];
     	},

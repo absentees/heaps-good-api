@@ -1,4 +1,15 @@
 module.exports = {
+	buzzNouns: [
+		"innovation",
+		"design",
+		"ux",
+		"prototyping",
+		"web development",
+		"app development",
+		"brainstorming",
+		"design thinking"
+	],
+
 	buzzVerbs: [
 		"innovate",
 		"build",
