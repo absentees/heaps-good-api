@@ -7,7 +7,7 @@ var status = "";
 
 
 module.exports = {
-	init: function(res,req){
+	init: function(req,res){
 		rootRef.on("value", function(data) {
 			status = data.val()["occupied"];
 		});
