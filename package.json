@@ -17,5 +17,8 @@
     "sentencer": "^0.1.5",
     "shutterstock": "^0.12.0",
     "tumblr": "^0.4.1"
+  },
+  "devDependencies": {
+    "twitter": "^1.2.5"
   }
 }
