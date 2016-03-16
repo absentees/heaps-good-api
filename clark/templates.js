@@ -14,5 +14,8 @@ module.exports = [
 	"What is a {{ adjective }} designer, and should you be one?",
 	"An open letter to {{ nouns }} in {{ buzz_noun }}",
 	"{{ number }} qualities of design-thinking {{ nouns }}",
-	"How can we teach {{ a_noun }} the {{ buzz_noun }} process?"
+	"How can we teach {{ a_noun }} the {{ buzz_noun }} process?",
+	"{{ number }} reasons {{ adjective }} designers should explore {{ adjective }} thinking",
+	"{{ number }} common {{ adjective }} dysfunctions of {{ buzzNoun }} teams—and what to do about them",
+	"{{ buzzNoun }} leaders answer: What's the biggest {{ noun }} in our industry?"
 ];
