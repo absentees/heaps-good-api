@@ -17,5 +17,7 @@ module.exports = [
 	"How can we teach {{ a_noun }} the {{ buzz_noun }} process?",
 	"{{ number }} reasons {{ adjective }} designers should explore {{ adjective }} thinking",
 	"{{ number }} common {{ adjective }} dysfunctions of {{ buzz_noun }} teams—and what to do about them",
-	"{{ buzz_noun }} leaders answer: What's the biggest {{ noun }} in our industry?"
+	"{{ buzz_noun }} leaders answer: What's the biggest {{ noun }} in our industry?",
+	"Designers shouldn't code — they should study {{ noun }}",
+	"{{ number }} things that take your {{ buzz_noun }} from {{ adjective }} to world class"
 ];
