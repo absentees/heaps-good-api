@@ -39,3 +39,7 @@ router.route('/clark').post(function(res,req) {
 router.route('/arturo').post(function(res,req) {
 	require('./arturo/').init(res,req);
 });
+
+router.route('/caspart').post(function(res,req) {
+	require('./caspart/').init(res,req);
+});
