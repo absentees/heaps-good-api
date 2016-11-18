@@ -24,7 +24,10 @@ var theMemes = [
   "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/21.png",
   "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/22.gif",
   "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/23.jpg",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/24.jpg"
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/24.jpg",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/25.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/26.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/27.png"
 ];
 
 module.exports = {
