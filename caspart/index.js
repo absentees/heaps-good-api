@@ -28,7 +28,12 @@ var theMemes = [
   "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/25.png",
   "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/26.png",
   "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/27.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/28.png"
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/28.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/29.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/30.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/31.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/32.png",
+  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/33.png"
 ];
 
 module.exports = {
