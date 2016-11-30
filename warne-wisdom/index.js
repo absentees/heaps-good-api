@@ -16,7 +16,7 @@ module.exports = {
 				res.json({
 					"response_type": "in_channel",
 					"attachments":[{
-						"text": tweet.text,
+						"text": tweet.text + " " + randomImage(),
 						"image_url": randomImage()
 					}]
 				});
