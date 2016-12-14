@@ -11,7 +11,7 @@ module.exports = {
 		});
 
 		var query = ({
-			query: "business man " + req.body.text,
+			query: "beer drinking " + req.body.text,
       page: Math.floor(Math.random() * 1000) + 1,
 			per_page: 1,
 			width_from: 500,
