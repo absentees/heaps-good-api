@@ -27,7 +27,7 @@ module.exports = {
 				res.json({
 					"response_type": "in_channel",
 					"attachments":[{
-						"text": data.data[0].description || "No description",
+						"text": data.data[0].description + ". That's IT." || "No description",
 						"image_url": data.data[0].assets.preview.url || ""
 					}]
 				});
