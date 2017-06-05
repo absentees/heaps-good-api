@@ -11,7 +11,7 @@ module.exports = {
 		});
 
 		var query = ({
-			query: "business man " + req.body.text,
+			query: "beer " + req.body.text,
       page: Math.floor(Math.random() * 1000) + 1,
 			per_page: 1,
 			width_from: 500,
@@ -27,7 +27,7 @@ module.exports = {
 				res.json({
 					"response_type": "in_channel",
 					"attachments":[{
-						"text": data.data[0].description || "No description",
+						"text": data.data[0].description + ". That's IT." || "No description",
 						"image_url": data.data[0].assets.preview.url || ""
 					}]
 				});
