@@ -48,10 +48,6 @@ router.route('/caspart').post(function(res,req) {
 	require('./caspart/').init(res,req);
 });
 
-router.route('/warne-wisdom').post(function(res,req) {
-	require('./warne-wisdom/').init(res,req);
-});
-
 router.route('/it').post(function(res,req) {
 	require('./it/').init(res,req);
 });
