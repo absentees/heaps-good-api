@@ -21,7 +21,6 @@ module.exports = {
 				});
 			} else {
 				res.json({
-					"response_type": "in_channel",
 					"text": "Suggestion Added: " + suggestionText,
 					"color": "#7CD197"
 				});
