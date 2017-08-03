@@ -27,8 +27,6 @@ module.exports = {
 					"color": "color": "#7CD197"
 				});
 			}
-
-
-		})
+		});
 	}
 };
