@@ -56,6 +56,10 @@ router.route('/goodboy').post(function(res,req) {
 	require('./goodboy/').init(res,req);
 });
 
+router.route('/warne-wisdom').post(function(res,req) {
+  require('./warne-wisdom/').init(res,req);
+});
+
 router.route('/suggest').post(function(res,req) {
 	require('./suggest/').init(res,req);
 });
