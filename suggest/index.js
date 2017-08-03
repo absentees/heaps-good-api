@@ -1,6 +1,8 @@
 var Airtable = require('airtable');
 var AIRTABLE_BASE_ID = process.env.airtable_base_id;
 var AIRTABLE_API = process.env.airtable_api;
+var moment = require('moment');
+
 
 var base = new Airtable({
 	apiKey: AIRTABLE_API
