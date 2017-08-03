@@ -23,7 +23,7 @@ module.exports = {
 				console.log(record);
 				res.json({
 					"text": "Suggestion Added!",
-					"color": "color": "#7CD197"
+					"color": "#7CD197"
 				});
 			}
 		});
