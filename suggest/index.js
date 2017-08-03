@@ -1,16 +1,12 @@
 var Airtable = require('airtable');
-var AIRTABLE_BASE_ID = process.env.airtable_base_id;
-var AIRTABLE_API = process.env.airtable_api;
 var moment = require('moment');
-
-
-var base = new Airtable({
-	apiKey: AIRTABLE_API
-}).base(AIRTABLE_BASE_ID);
-
 
 module.exports = {
 	init: function(req,res){
+		var base = new Airtable({
+			apiKey: process.env.airtable_api
+		}).base(process.env.airtable_base_id);
+
 		var suggestionText = req.body.text;
 
 		base('All').create({
