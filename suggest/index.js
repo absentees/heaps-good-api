@@ -16,7 +16,7 @@ module.exports = {
 			"Date Added": moment().format("YYYY-MM-DD")
 		}, function(err, record){
 			if (err) {
-				console.error(err);
+				console.log(err);
 				res.json({
 					"text": "Something went wrong",
 					"color": "#F35A00"
