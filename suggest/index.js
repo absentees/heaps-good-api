@@ -12,7 +12,7 @@ module.exports = {
 		var suggestionText = req.body.text;
 
 		base('All').create({
-			"Suggestion": suggestionText;
+			"Suggestion": suggestionText,
 			"Date Added": moment().format("YYYY-MM-DD")
 		}, function(err, record){
 			if (err) {
