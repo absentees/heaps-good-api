@@ -19,13 +19,11 @@ module.exports = {
 			checkin.time = moment(checkin.time, "dd, DD MMM YYYY hh:mm:ss ZZ").fromNow();
 
 			// Construct sentencer
-			var res = "Arturo was last seen " + checkin.time + " at " + checkin.location + " drinking a " + checkin.beer + " by " + checkin.brewery + "."
+			var responseText = "Arturo was last seen " + checkin.time + " at " + checkin.location + " drinking a " + checkin.beer + " by " + checkin.brewery + "."
 
 			res.json({
 				"response_type": "in_channel",
-				"attachments": [{
-					"text": res
-				}]
+				text: responseText
 			});
 		});
 	}
