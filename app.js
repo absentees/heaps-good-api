@@ -63,3 +63,7 @@ router.route('/warne-wisdom').post(function(res,req) {
 router.route('/suggest').post(function(res,req) {
 	require('./suggest/').init(res,req);
 });
+
+router.route('/whereisarturo').post(function(res,req) {
+	require('./whereisarturo/').init(res,req);
+});
