@@ -23,7 +23,7 @@ module.exports = {
 
 			res.json({
 				"response_type": "in_channel",
-				text: responseText
+				"text": responseText
 			});
 		});
 	}
