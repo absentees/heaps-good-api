@@ -10,7 +10,7 @@ app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
 
 router.use(function(req, res, next){
-	if (req.body.token == process.env.slack_token || req.body.token == process.env.slack_token_2 || req.body.token == process.env.slack_token_3 || req.body.token == process.env.slack_token_4  || req.body.token == process.env.slack_token_5 || req.body.token == process.env.slack_token_6 || req.body.token == process.env.slack_token_7 || req.body.token == process.env.slack_token_8 || req.body.token == process.env.slack_token_9 || req.body.token == process.env.slack_token_10) {
+	if (req.body.token == process.env.slack_token || req.body.token == process.env.slack_token_2 || req.body.token == process.env.slack_token_3 || req.body.token == process.env.slack_token_4  || req.body.token == process.env.slack_token_5 || req.body.token == process.env.slack_token_6 || req.body.token == process.env.slack_token_7 || req.body.token == process.env.slack_token_8 || req.body.token == process.env.slack_token_9 || req.body.token == process.env.slack_token_10 || req.body.token == process.env.slack_token_11) {
 		// Request has come from slack, all good
 		console.log("TOKEN MATCHES");
 		next();
@@ -24,6 +24,10 @@ router.use(function(req, res, next){
 app.use('/api', router);
 
 //API ROUTES
+router.route('/bong').post(function(res,req){
+	require('./bong').init(res,req);
+});
+
 router.route('/business-time').post(function(res,req){
 	require('./business-time').init(res,req);
 });
