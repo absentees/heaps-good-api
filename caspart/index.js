@@ -1,55 +1,46 @@
-var async = require('async');
-
-var theMemes = [
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/1.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/2.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/3.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/4.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/5.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/6.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/7.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/8.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/9.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/10.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/11.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/12.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/13.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/14.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/15.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/16.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/17.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/18.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/19.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/20.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/21.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/22.gif",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/23.jpg",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/24.jpg",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/25.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/26.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/27.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/28.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/29.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/30.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/31.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/32.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/33.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/34.png",
-  "http://pc.prescache.com.s3.amazonaws.com/caspart/b7FTVxAtfEApNLnG8fLZcWqkjUvxwr/35.jpg"
-];
+var Airtable = require("airtable");
 
 module.exports = {
-	init: function(req,res) {
+	init: function(req, res) {
+		var base = new Airtable({
+			apiKey: process.env.airtable_api
+		}).base(process.env.airtable_caspart_base);
+		const casparts = [];
 
-  var returnImage = theMemes[Math.floor(Math.random()*theMemes.length)];
+		base("Casparts")
+			.select({
+				view: "All"
+			})
+			.eachPage(
+				function page(records, fetchNextPage) {
+					records.forEach(function(record) {
+						casparts.push({
+							artist: record.get("Artist") || "Anonymous",
+							imageURL: record.get("Art")[0].url
+						});
+					});
 
-  res.json({
-    "response_type": "in_channel",
-    "attachments":[{
-      "text": "" ,
-      "image_url": returnImage
-    }]
-  });
+					fetchNextPage();
+				},
+				function done(err) {
+					if (err) {
+						console.error(err);
+						return;
+					}
 
+					var returnImage =
+						casparts[Math.floor(Math.random() * casparts.length)];
+
+					res.json({
+						response_type: "in_channel",
+						attachments: [
+							{
+								text: returnImage.artist,
+								image_url: returnImage.imageURL
+							}
+						]
+					});
+				}
+			);
 	}
 };
