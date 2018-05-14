@@ -17,6 +17,7 @@
     "face-detectify": "^1.0.0",
     "firebase": "^2.4.1",
     "google-images": "^2.1.0",
+    "image-downloader": "^3.3.0",
     "moment": "^2.18.1",
     "random-item-in-array": "^1.0.0",
     "request": "^2.79.0",

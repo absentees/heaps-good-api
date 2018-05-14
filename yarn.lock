@@ -989,6 +989,12 @@ iconv-lite@0.4.15:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
+image-downloader@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/image-downloader/-/image-downloader-3.3.0.tgz#fef07ea8f4590892a6f31857ba97ec8bdaaad0c4"
+  dependencies:
+    request "^2.82.0"
+
 indento@^1.1.1:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/indento/-/indento-1.1.11.tgz#dd5cb7516b345c3a2d8085fef30b4cf37c261a31"
@@ -1620,7 +1626,7 @@ request@2.x, request@^2.55.0, request@^2.72.0, request@^2.79.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.44.0:
+request@^2.44.0, request@^2.82.0:
   version "2.85.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.85.0.tgz#5a03615a47c61420b3eb99b7dba204f83603e1fa"
   dependencies:
