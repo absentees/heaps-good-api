@@ -21,11 +21,11 @@ module.exports = {
 								res.json({
 									attachments: [
 										{
-											image_url: files.outputPath
+											image_url: req.get('host') + '/caspart/generatedCaspart.jpg'
 										}
 									]
 								});
-								return casparter.deleteFiles([
+								casparter.deleteFiles([
 									files.inputPath,
 									files.outputPath
 								]);

@@ -16,7 +16,7 @@ module.exports = {
 							`${res.data[0].height}x${res.data[0].width}+${
 								res.data[0].x
 							}+${res.data[0].y}`,
-							`${__dirname}/generatedCaspart.jpg`
+							`${__dirname}/img/generatedCaspart.jpg`
 						],
 						function(err, stdout) {
 							if (err) return reject(err);
@@ -25,7 +25,7 @@ module.exports = {
                             // return resolve(`${__dirname}/generatedCaspart.jpg`);
                             let obj = {
                                 inputPath: inputPath,
-                                outputPath: `${__dirname}/generatedCaspart.jpg`
+                                outputPath: `${__dirname}/img/generatedCaspart.jpg`
                             };
                             return resolve(obj);
 						}

@@ -21,6 +21,7 @@ router.use(function(req, res, next){
 	}
 });
 
+app.use('/casparts', express.static('caspart/img'));
 app.use('/api', router);
 
 //API ROUTES
