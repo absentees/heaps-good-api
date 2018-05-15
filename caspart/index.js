@@ -12,17 +12,22 @@ module.exports = {
 				case "generate":
 					if (isURL(request[1])) {
 						let downloadImageURL = request[1];
+
+						if (!fs.existsSync(`${__dirname}/img`)){
+							fs.mkdirSync(`${__dirname}/img`);
+						}
+
 						casparter
 							.downloadImage(downloadImageURL)
 							.then(file => {
-								return casparter.generateCaspart(file);
+								return casparter.generateCaspart(file,`${__dirname}/img`);
 							})
 							.then(files => {
 								res.json({
 									"response_type": "in_channel",
 									attachments: [
 										{
-											image_url: 'http://heaps-good-api.herokuapp.com/casparts/' + files.outputPath
+											image_url: 'http://heaps-good-api.herokuapp.com/casparts/' + files.outputFilename
 										}
 									]
 								});
@@ -30,7 +35,10 @@ module.exports = {
 									files.inputPath								]);
 							})
 							.catch(err => {
-								console.log(err);
+								res.json({
+									text: err,
+									"color": "#F35A00"
+								});
 							});
 					} else {
 						res.json({

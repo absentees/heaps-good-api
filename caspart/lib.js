@@ -5,12 +5,12 @@ const fs = require("fs");
 const moment = require("moment")
 
 module.exports = {
-	generateCaspart: inputPath => {
+	generateCaspart: (inputPath, dir) => {
 		return new Promise((resolve, reject) => {
 			FaceDetectify.fromFile(`${inputPath}`)
 				.then(res => {
-					if (!fs.existsSync(`${__dirname}/img`)){
-						fs.mkdirSync(`${__dirname}/img`);
+					if (!res.data) {
+						return reject('No faces found in image.');
 					}
 
 					let filename = `generatedCaspart-${moment().format()}.jpg`;
@@ -23,16 +23,16 @@ module.exports = {
 							`${res.data[0].height}x${res.data[0].width}+${
 								res.data[0].x
 							}+${res.data[0].y}`,
-							`${__dirname}/img/${filename}`
+							`${dir}/${filename}`
 						],
 						function(err, stdout) {
 							if (err) return reject(err);
 							// Return generated imagepath
-							console.log(`${__dirname}/img/${filename}`);
+							console.log(`${dir}/${filename}`);
                             
                             let obj = {
                                 inputPath: inputPath,
-                                outputPath: `${filename}`
+                                outputFilename: `${filename}`
                             };
                             return resolve(obj);
 						}
