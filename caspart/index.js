@@ -21,7 +21,7 @@ module.exports = {
 								res.json({
 									attachments: [
 										{
-											image_url: req.get('host') + '/casparts/' + files.outputPath
+											image_url: 'http://heaps-good-api.herokuapp.com/casparts/' + files.outputPath
 										}
 									]
 								});
