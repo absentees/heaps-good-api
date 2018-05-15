@@ -26,8 +26,8 @@ module.exports = {
 						function(err, stdout) {
 							if (err) return reject(err);
 							// Return generated imagepath
-							console.log("Generated Caspart.");
-                            // return resolve(`${__dirname}/generatedCaspart.jpg`);
+							console.log(`Generated Caspart: ${__dirname}/img/generatedCaspart-${moment().format()}.jpg`);
+                            
                             let obj = {
                                 inputPath: inputPath,
                                 outputPath: `${__dirname}/img/generatedCaspart-${moment().format()}.jpg`
