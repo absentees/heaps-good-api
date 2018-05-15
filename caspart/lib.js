@@ -8,6 +8,10 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			FaceDetectify.fromFile(`${inputPath}`)
 				.then(res => {
+					if (!fs.existsSync('./img')){
+						fs.mkdirSync('./img');
+					}
+
 					im.composite(
 						[
 							`${__dirname}/caspart.png`,
