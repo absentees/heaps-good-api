@@ -8,8 +8,8 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			FaceDetectify.fromFile(`${inputPath}`)
 				.then(res => {
-					if (!fs.existsSync('./img')){
-						fs.mkdirSync('./img');
+					if (!fs.existsSync(`${__dirname}/img`)){
+						fs.mkdirSync(`${__dirname}/img`);
 					}
 
 					im.composite(
