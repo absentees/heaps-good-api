@@ -19,6 +19,7 @@ module.exports = {
 							})
 							.then(files => {
 								res.json({
+									"response_type": "in_channel",
 									attachments: [
 										{
 											image_url: 'http://heaps-good-api.herokuapp.com/casparts/' + files.outputPath
