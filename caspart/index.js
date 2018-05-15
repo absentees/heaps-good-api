@@ -47,10 +47,10 @@ module.exports = {
 			}
 		} else {
 			// No text just call random caspart
-			this.randomCaspart();
+			this.randomCaspart(res);
 		}
 	},
-	randomCaspart: function() {
+	randomCaspart: function(res) {
 		var base = new Airtable({
 			apiKey: process.env.airtable_api
 		}).base(process.env.airtable_caspart_base);
