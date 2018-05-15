@@ -13,6 +13,8 @@ module.exports = {
 						fs.mkdirSync(`${__dirname}/img`);
 					}
 
+					let filename = `generatedCaspart-${moment().format()}.jpg`;
+
 					im.composite(
 						[
 							`${__dirname}/caspart.png`,
@@ -21,16 +23,16 @@ module.exports = {
 							`${res.data[0].height}x${res.data[0].width}+${
 								res.data[0].x
 							}+${res.data[0].y}`,
-							`${__dirname}/img/generatedCaspart-${moment().format()}.jpg`
+							`${__dirname}/img/${filename}`
 						],
 						function(err, stdout) {
 							if (err) return reject(err);
 							// Return generated imagepath
-							console.log(`Generated Caspart: ${__dirname}/img/generatedCaspart-${moment().format()}.jpg`);
+							console.log(`${__dirname}/img/${filename}`);
                             
                             let obj = {
                                 inputPath: inputPath,
-                                outputPath: `${__dirname}/img/generatedCaspart-${moment().format()}.jpg`
+                                outputPath: `${filename}`
                             };
                             return resolve(obj);
 						}
