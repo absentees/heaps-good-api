@@ -1,8 +1,9 @@
 const FaceDetectify = require("face-detectify");
 const im = require("simple-imagemagick");
 const download = require("image-downloader");
-const fs = require("fs");
 const moment = require("moment")
+const fs = require("fs");
+
 
 module.exports = {
 	generateCaspart: (inputPath, dir) => {

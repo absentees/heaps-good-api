@@ -1,6 +1,8 @@
 var Airtable = require("airtable");
 var isURL = require("is-url");
 var casparter = require("./lib");
+const fs = require("fs");
+
 
 module.exports = {
 	init: function(req, res) {
