@@ -2,13 +2,13 @@ const casparter = require("./lib.js");
 
 casparter
 	.downloadImage(
-		"https://cdn.shopify.com/s/files/1/1703/8383/products/The_Shining_Jack_Nicholson_Here_s_Johnny_large.jpg"
+		"https://bbd-1tmxd3aba43noa.stackpathdns.com/data/images/full/209/jobs-jpg.jpg"
 	)
 	.then(file => {
 		return casparter.generateCaspart(file);
 	})
 	.then(files => {
-		return casparter.deleteFiles([files.inputPath, files.outputPath]);
+		return casparter.deleteFiles([files.inputPath]);
 	})
 	.catch(err => {
 		console.log(err);

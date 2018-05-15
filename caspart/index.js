@@ -21,7 +21,7 @@ module.exports = {
 								res.json({
 									attachments: [
 										{
-											image_url: req.get('host') + '/caspart/generatedCaspart.jpg'
+											image_url: req.get('host') + '/casparts/generatedCaspart.jpg'
 										}
 									]
 								});
