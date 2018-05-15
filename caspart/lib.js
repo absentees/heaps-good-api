@@ -2,6 +2,7 @@ const FaceDetectify = require("face-detectify");
 const im = require("simple-imagemagick");
 const download = require("image-downloader");
 const fs = require("fs");
+const moment = require("moment")
 
 module.exports = {
 	generateCaspart: inputPath => {
@@ -20,7 +21,7 @@ module.exports = {
 							`${res.data[0].height}x${res.data[0].width}+${
 								res.data[0].x
 							}+${res.data[0].y}`,
-							`${__dirname}/img/generatedCaspart.jpg`
+							`${__dirname}/img/generatedCaspart-${moment().format()}.jpg`
 						],
 						function(err, stdout) {
 							if (err) return reject(err);
@@ -29,7 +30,7 @@ module.exports = {
                             // return resolve(`${__dirname}/generatedCaspart.jpg`);
                             let obj = {
                                 inputPath: inputPath,
-                                outputPath: `${__dirname}/img/generatedCaspart.jpg`
+                                outputPath: `${__dirname}/img/generatedCaspart-${moment().format()}.jpg`
                             };
                             return resolve(obj);
 						}

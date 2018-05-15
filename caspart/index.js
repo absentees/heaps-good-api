@@ -26,9 +26,7 @@ module.exports = {
 									]
 								});
 								casparter.deleteFiles([
-									files.inputPath,
-									files.outputPath
-								]);
+									files.inputPath								]);
 							})
 							.catch(err => {
 								console.log(err);
