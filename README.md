@@ -11,7 +11,8 @@ Given a keyword, returns a random business related stock photo from istock.
 Author: https://github.com/absentees
 
 #### /caspart
-Returns a random caspart from an S3 bucket containing all the artworks. Good night sweet prince.
+Returns a random caspart from an Airtable containing all the artworks. Good night sweet prince.
+Add new Casparts here: https://airtable.com/shrayoeABrdP8eeLh
 Author: https://github.com/absentees
 
 #### /clark

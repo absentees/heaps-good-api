@@ -1,7 +1,56 @@
 var Airtable = require("airtable");
+var isURL = require("is-url");
+var casparter = require("./lib");
 
 module.exports = {
 	init: function(req, res) {
+		// Handle the request
+		if (req.body.text) {
+			let request = req.body.text.split(" ");
+
+			switch (request[0]) {
+				case "generate":
+					if (isURL(request[1])) {
+						let downloadImageURL = request[1];
+						casparter
+							.downloadImage(downloadImageURL)
+							.then(file => {
+								return casparter.generateCaspart(file);
+							})
+							.then(files => {
+								res.json({
+									attachments: [
+										{
+											image_url: files.outputPath
+										}
+									]
+								});
+								return casparter.deleteFiles([
+									files.inputPath,
+									files.outputPath
+								]);
+							})
+							.catch(err => {
+								console.log(err);
+							});
+					} else {
+						res.json({
+							text: "Your URL wasn't valid sorry."
+						});
+					}
+					break;
+				default:
+					res.json({
+						text: "Unable to handle that request sorry."
+					});
+					break;
+			}
+		} else {
+			// No text just call random caspart
+			this.randomCaspart();
+		}
+	},
+	randomCaspart: function() {
 		var base = new Airtable({
 			apiKey: process.env.airtable_api
 		}).base(process.env.airtable_caspart_base);
