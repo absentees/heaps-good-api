@@ -12,11 +12,10 @@ module.exports = {
 
 		var query = ({
 			query: "vape " + req.body.text,
-      page: Math.floor(Math.random() * 1000) + 1,
+      page: Math.floor(Math.random() * 10) + 1,
 			per_page: 1,
 			width_from: 500,
-            people_model_released: true,
-            image_type: 'photo'
+      image_type: 'photo'
 		});
 
 		api.image.search(query, function(err,data){
